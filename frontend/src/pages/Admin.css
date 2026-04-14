@@ -1,0 +1,18 @@
+.admin-login-container { height: 100vh; display: flex; justify-content: center; align-items: center; background-color: var(--bg-color); padding: 1rem; }
+.admin-login-card { background-color: var(--bg-secondary); padding: 3rem; border-radius: 8px; border-top: 4px solid var(--primary-color); width: 100%; max-width: 400px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+.admin-input { width: 100%; padding: 1rem; background-color: var(--bg-color); border: 1px solid var(--border-color); color: #fff; border-radius: 4px; font-family: 'Inter', sans-serif; }
+.admin-input:focus { outline: none; border-color: var(--primary-color); }
+.admin-error { color: #e74c3c; margin-top: 1rem; font-size: 0.9rem; }
+.admin-dashboard { padding-top: 100px; min-height: 100vh; background-color: var(--bg-color); }
+.dashboard-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 3rem; background-color: var(--bg-secondary); padding: 2rem; border-radius: 8px; border-left: 4px solid var(--primary-color); }
+.dashboard-stat h3 { color: var(--text-muted); font-family: 'Inter', sans-serif; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; }
+.stat-number { font-size: 3rem; color: var(--primary-color); font-family: 'Playfair Display', serif; line-height: 1; margin-top: 0.5rem; }
+.loading-text { text-align: center; color: var(--primary-color); font-size: 1.2rem; }
+.bookings-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 1.5rem; padding-bottom: 4rem; }
+.booking-card { background-color: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 8px; padding: 1.5rem; transition: transform 0.3s ease; }
+.booking-card:hover { transform: translateY(-5px); border-color: var(--primary-color); }
+.booking-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border-color); }
+.booking-header h4 { color: #fff; font-size: 1.2rem; margin: 0; }
+.status-badge { background-color: rgba(46, 204, 113, 0.1); color: #2ecc71; padding: 0.3rem 0.6rem; border-radius: 20px; font-size: 0.8rem; display: flex; align-items: center; gap: 0.3rem; }
+.booking-details { display: flex; flex-direction: column; gap: 0.8rem; }
+.detail-item { display: flex; align-items: center; gap: 0.8rem; color: #fff; font-size: 0.95rem; }

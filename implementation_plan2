@@ -1,0 +1,74 @@
+# Dark Luxury Premium Salon UI Redesign
+
+This plan covers the transformation of the current salon website into a premium, modern, black-and-gold themed layout as requested, ensuring consistent spacing, layout fixes, and rich micro-interactions.
+
+## User Review Required
+
+> [!IMPORTANT]
+> To achieve "section reveal animations on scroll", I will add a simple `IntersectionObserver` inside `pages/Home.jsx`. This won't touch the backend logic but will control purely the UI reveal logic. Please confirm if modifying the React component `Home.jsx` slightly to run this effect is acceptable.
+
+## Proposed Changes
+
+---
+
+### Global Styling (Color & Typography)
+
+#### [MODIFY] [index.css](file:///c:/Users/himanshu%20kumar/Desktop/Antigravity%20Workspace/frontend/src/index.css)
+- Implement `black + gold` luxury color palette variables (`--bg-color: #0d0d0d`, `--bg-secondary: #1a1a1a`, `--primary-color: #D4AF37`, etc.).
+- Update base typography for elegant feel using Playfair Display for headings and Inter for body text.
+- Add animation utility classes: `.reveal`, `.fade-in`, `.slide-up`, `.visible`.
+- Reset padding/margin system to strict 8px/16px/24px/32px scale.
+- Update global `.btn` to include hover scaling (`transform: scale(1.05)`) and color changes.
+
+---
+
+### Component Level Styling
+
+#### [MODIFY] [Hero.css](file:///c:/Users/himanshu%20kumar/Desktop/Antigravity%20Workspace/frontend/src/components/Hero.css)
+- Fix overlay to ensure text is fully readable (darker gradient).
+- Center text perfectly, add text-shadow to headings.
+- Add button animation transitions.
+
+#### [MODIFY] [Navbar.css](file:///c:/Users/himanshu%20kumar/Desktop/Antigravity%20Workspace/frontend/src/components/Navbar.css)
+- Restyle for the dark background.
+- Ensure the active blur backdrop looks elegant without jarring borders.
+
+#### [MODIFY] [About.css](file:///c:/Users/himanshu%20kumar/Desktop/Antigravity%20Workspace/frontend/src/components/About.css)
+- Convert broken margins to CSS Grid/Flexbox gap properties on a 16px-multiplier scale.
+- Add hover effects on the custom gold-bordered image wrapper (slight 1.02x scale).
+
+#### [MODIFY] [Services.css](file:///c:/Users/himanshu%20kumar/Desktop/Antigravity%20Workspace/frontend/src/components/Services.css)
+- Enforce standard grid gap spacing (e.g., `2rem` -> `32px`).
+- Update card styling to match luxury dark theme.
+- Enhance card hover effects (`transform: translateY(-8px)`).
+- Update icons and link styles.
+
+#### [MODIFY] [Gallery.css](file:///c:/Users/himanshu%20kumar/Desktop/Antigravity%20Workspace/frontend/src/components/Gallery.css)
+- Enforce grid consistency.
+- Add refined hover zoom (`transform: scale(1.1) ease`).
+
+#### [MODIFY] [Reviews.css](file:///c:/Users/himanshu%20kumar/Desktop/Antigravity%20Workspace/frontend/src/components/Reviews.css)
+- Adjust dark background contrast for review cards.
+- Add hover transition for a premium feel.
+
+#### [MODIFY] [Contact.css](file:///c:/Users/himanshu%20kumar/Desktop/Antigravity%20Workspace/frontend/src/components/Contact.css)
+- Update input backgrounds to dark mode (`#1a1a1a`).
+- Define gold focus rings.
+
+---
+
+### React Logic Adjustments (UI Only)
+
+#### [MODIFY] [Home.jsx](file:///c:/Users/himanshu%20kumar/Desktop/Antigravity%20Workspace/frontend/src/pages/Home.jsx) & various inner components
+- Add `useEffect` with `IntersectionObserver` to trigger scroll animations.
+- Apply `.reveal`, `.slide-up` classes to the outermost wrappers of all component sections (Hero, About, Services, Gallery, Reviews, Contact).
+
+## Open Questions
+
+- Is it okay if I use a simple global `IntersectionObserver` in Home.jsx to toggle `.visible` classes for scroll animations?
+
+## Verification Plan
+
+### Manual Verification
+- Will ask the user to view the app at `localhost:5173`.
+- User checks for the dark luxury theme, button hover transitions, grid structure layout, padding sizes, and whether sections slide up gracefully upon scrolling.

@@ -1,0 +1,121 @@
+.navbar {
+  background: transparent; 
+  height: 90px; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  position: fixed; 
+  top: 0; 
+  width: 100%; 
+  z-index: 1000; 
+  transition: background 0.4s ease, box-shadow 0.4s ease;
+}
+
+.navbar.scrolled {
+  background: rgba(8, 8, 8, 0.95); 
+  backdrop-filter: blur(12px); 
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.8); 
+  border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.navbar-container { 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  height: 100%; 
+  width: 100%; 
+  max-width: 1200px; 
+  padding: 0 2rem; 
+}
+
+.navbar-logo { 
+  color: #fff; 
+  justify-self: start; 
+  cursor: pointer; 
+  text-decoration: none; 
+  font-size: 2rem; 
+  font-weight: 700; 
+  font-family: var(--heading); 
+  letter-spacing: 2px; 
+}
+
+.navbar-logo span { 
+  color: var(--primary-color); 
+}
+
+.nav-menu { 
+  display: flex; 
+  align-items: center; 
+  list-style: none; 
+  text-align: center; 
+}
+
+.nav-item { 
+  height: 90px; 
+}
+
+.nav-link { 
+  color: var(--text-main); 
+  background: none; 
+  border: none; 
+  font-size: 1rem; 
+  font-family: var(--sans); 
+  font-weight: 500;
+  cursor: pointer; 
+  display: flex; 
+  align-items: center; 
+  padding: 0 1.5rem; 
+  height: 100%; 
+  transition: color 0.3s ease-in-out; 
+  letter-spacing: 0.5px;
+}
+
+.nav-link:hover { 
+  color: var(--primary-color); 
+}
+
+.nav-btn { 
+  margin-left: 1.5rem; 
+}
+
+.menu-icon { 
+  display: none; 
+  cursor: pointer; 
+}
+
+@media screen and (max-width: 960px) {
+  .nav-menu { 
+    flex-direction: column; 
+    width: 100%; 
+    height: 100vh; 
+    position: absolute; 
+    top: 90px; 
+    left: -100%; 
+    opacity: 1; 
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); 
+    background: var(--bg-color); 
+  }
+  .nav-menu.active { 
+    left: 0; 
+    z-index: 1; 
+    border-top: 1px solid var(--border-color); 
+  }
+  .nav-item {
+    height: auto;
+  }
+  .nav-link { 
+    text-align: center; 
+    padding: 2rem; 
+    width: 100%; 
+    display: block; 
+    font-size: 1.2rem;
+  }
+  .nav-btn { 
+    margin: 2rem auto; 
+    display: block; 
+    width: 80%;
+  }
+  .menu-icon { 
+    display: block; 
+  }
+}
