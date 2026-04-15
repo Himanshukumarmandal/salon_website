@@ -11,18 +11,18 @@ function Admin() {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    if (password === 'admin123') { setIsAuthenticated(true); fetchBookings(); } 
+    if (password === 'admin123') { setIsAuthenticated(true); fetchBookings(); }
     else { setError('Invalid password'); }
   };
   const fetchBookings = async () => {
     setLoading(true);
     try {
-      const response = await axios.get('http://localhost:5000/api/bookings');
+      const response = await axios.get('http://salon-website-g2bh.onrender.com/api/bookings');
       setBookings(response.data);
     } catch (err) { setError('Failed to fetch bookings from server'); } finally { setLoading(false); }
   };
 
-  const formatDate = (dateString) => new Date(dateString).toLocaleDateString(undefined, { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute:'2-digit' });
+  const formatDate = (dateString) => new Date(dateString).toLocaleDateString(undefined, { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' });
 
   if (!isAuthenticated) return (
     <div className="admin-login-container fade-in">
@@ -34,7 +34,7 @@ function Admin() {
           {error && <p className="admin-error">{error}</p>}
           <button type="submit" className="btn" style={{ width: '100%', marginTop: '1rem' }}>Login</button>
         </form>
-        <p style={{marginTop: '1rem', fontSize: '0.8rem', color: 'var(--text-muted)'}}>Demo Password: admin123</p>
+        <p style={{ marginTop: '1rem', fontSize: '0.8rem', color: 'var(--text-muted)' }}>Demo Password: admin123</p>
       </div>
     </div>
   );
@@ -53,7 +53,7 @@ function Admin() {
               <div className="booking-card" key={booking._id}>
                 <div className="booking-header">
                   <h4>{booking.service}</h4>
-                  <span className="status-badge"><CheckCircle size={14} style={{marginRight: '4px'}}/> Confirmed</span>
+                  <span className="status-badge"><CheckCircle size={14} style={{ marginRight: '4px' }} /> Confirmed</span>
                 </div>
                 <div className="booking-details">
                   <div className="detail-item"><User size={16} color="var(--primary-color)" /><span>{booking.customerName}</span></div>
