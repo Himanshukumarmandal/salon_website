@@ -11,7 +11,7 @@ function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault(); setLoading(true); setStatus({ type: '', message: '' });
     try {
-      const response = await axios.post('http://salon-website-g2bh.onrender.com/api/bookings', formData);
+      const response = await axios.post('https://salon-website-g2bh.onrender.com/api/bookings/api/bookings', formData);
       setStatus({ type: 'success', message: response.data.message });
       setFormData({ customerName: '', phoneNumber: '', service: '', appointmentDate: '' });
     } catch (error) { setStatus({ type: 'error', message: error.response?.data?.message || 'Error occurred while booking. Please try again.' }); } finally { setLoading(false); }

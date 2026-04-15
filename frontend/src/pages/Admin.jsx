@@ -17,7 +17,7 @@ function Admin() {
   const fetchBookings = async () => {
     setLoading(true);
     try {
-      const response = await axios.get('http://salon-website-g2bh.onrender.com/api/bookings');
+      const response = await axios.get('https://salon-website-g2bh.onrender.com/api/bookings/api/bookings');
       setBookings(response.data);
     } catch (err) { setError('Failed to fetch bookings from server'); } finally { setLoading(false); }
   };
